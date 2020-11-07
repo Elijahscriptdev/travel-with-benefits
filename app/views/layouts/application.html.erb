@@ -43,6 +43,9 @@
             <% end %>
           </div>
         </li>
+        <li class="nav-item">
+          <%= link_to 'ADMIN', rails_admin_path, class: 'nav-link' %>
+        </li>
         <!-- <% if current_user.nil? %>
           <li class="nav-item">
             <%= link_to new_user_session_path, class: 'nav-link' do %>Sign in<%
@@ -61,6 +64,10 @@
     </div>
   </nav>
 
+  
+  
+  <%= yield %>
+
   <% unless flash.empty? %>
   <script type="text/javascript">
     <% flash.each do |f | %>
@@ -69,8 +76,6 @@
         <%end%>
   </script>
   <% end %> 
-  
-  <%= yield %>
 </body>
 
 </html>

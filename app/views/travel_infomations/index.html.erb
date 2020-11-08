@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Travel Infomations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Travel from</th>
+      <th>Travel to</th>
+      <th>Travel date</th>
+      <th>Bus type</th>
+      <th>Departing time</th>
+      <th>Seat available</th>
+      <th>Price</th>
+      <th>Availability</th>
+      <th>Company name</th>
+      <th>Takeoff location</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @travel_infomations.each do |travel_infomation| %>
+      <tr>
+        <td><%= travel_infomation.title %></td>
+        <td><%= travel_infomation.travel_from %></td>
+        <td><%= travel_infomation.travel_to %></td>
+        <td><%= travel_infomation.travel_date %></td>
+        <td><%= travel_infomation.bus_type %></td>
+        <td><%= travel_infomation.departing_time %></td>
+        <td><%= travel_infomation.seat_available %></td>
+        <td><%= travel_infomation.price %></td>
+        <td><%= travel_infomation.availability %></td>
+        <td><%= travel_infomation.company_name %></td>
+        <td><%= travel_infomation.takeoff_location %></td>
+        <td><%= link_to 'Show', travel_infomation %></td>
+        <td><%= link_to 'Edit', edit_travel_infomation_path(travel_infomation) %></td>
+        <td><%= link_to 'Destroy', travel_infomation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Travel Infomation', new_travel_infomation_path %>

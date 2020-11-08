@@ -43,6 +43,13 @@
             <% end %>
           </div>
         </li>
+        <% if user_signed_in? %>
+        <% if current_user.superadmin_role? || current_user.supervisor_role? %>
+        <li class="nav-item">
+          <%= link_to 'Admin', rails_admin_path, class: 'nav-link' %>
+        </li>
+        <%end%>
+        <%end%>
         <!-- <% if current_user.nil? %>
           <li class="nav-item">
             <%= link_to new_user_session_path, class: 'nav-link' do %>Sign in<%

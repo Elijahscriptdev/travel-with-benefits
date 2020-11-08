@@ -1,0 +1,2 @@
+module TravelInfomationsHelper
+end

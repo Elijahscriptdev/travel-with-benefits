@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @travel_infomation.title %>
+</p>
+
+<p>
+  <strong>Travel from:</strong>
+  <%= @travel_infomation.travel_from %>
+</p>
+
+<p>
+  <strong>Travel to:</strong>
+  <%= @travel_infomation.travel_to %>
+</p>
+
+<p>
+  <strong>Travel date:</strong>
+  <%= @travel_infomation.travel_date %>
+</p>
+
+<p>
+  <strong>Bus type:</strong>
+  <%= @travel_infomation.bus_type %>
+</p>
+
+<p>
+  <strong>Departing time:</strong>
+  <%= @travel_infomation.departing_time %>
+</p>
+
+<p>
+  <strong>Seat available:</strong>
+  <%= @travel_infomation.seat_available %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @travel_infomation.price %>
+</p>
+
+<p>
+  <strong>Availability:</strong>
+  <%= @travel_infomation.availability %>
+</p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @travel_infomation.company_name %>
+</p>
+
+<p>
+  <strong>Takeoff location:</strong>
+  <%= @travel_infomation.takeoff_location %>
+</p>
+
+<%= link_to 'Edit', edit_travel_infomation_path(@travel_infomation) %> |
+<%= link_to 'Back', travel_infomations_path %>

@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  travel_from: MyString
+  travel_to: MyString
+  travel_date: MyString
+  bus_type: MyString
+  departing_time: MyString
+  seat_available: 1
+  price: 1
+  availability: MyString
+  company_name: MyString
+  takeoff_location: MyString
+  user: one
+
+two:
+  title: MyString
+  travel_from: MyString
+  travel_to: MyString
+  travel_date: MyString
+  bus_type: MyString
+  departing_time: MyString
+  seat_available: 1
+  price: 1
+  availability: MyString
+  company_name: MyString
+  takeoff_location: MyString
+  user: two

@@ -1,0 +1,72 @@
+<%= form_with(model: travel_infomation, local: true) do |form| %>
+  <% if travel_infomation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(travel_infomation.errors.count, "error") %> prohibited this travel_infomation from being saved:</h2>
+
+      <ul>
+        <% travel_infomation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :travel_from %>
+    <%= form.text_field :travel_from %>
+  </div>
+
+  <div class="field">
+    <%= form.label :travel_to %>
+    <%= form.text_field :travel_to %>
+  </div>
+
+  <div class="field">
+    <%= form.label :travel_date %>
+    <%= form.text_field :travel_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bus_type %>
+    <%= form.text_field :bus_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departing_time %>
+    <%= form.text_field :departing_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :seat_available %>
+    <%= form.number_field :seat_available %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :availability %>
+    <%= form.text_field :availability %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_name %>
+    <%= form.text_field :company_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :takeoff_location %>
+    <%= form.text_field :takeoff_location %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

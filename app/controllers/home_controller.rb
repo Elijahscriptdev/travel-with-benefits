@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
-  def index; end
+  def index
+    @travel_infomations = TravelInfomation.all
+  end
 
   def about; end
 

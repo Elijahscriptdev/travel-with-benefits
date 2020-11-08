@@ -3,10 +3,88 @@
 
 <% if user_signed_in? %>
 <% if current_user.superadmin_role? || current_user.supervisor_role? %>
-	<p>Visible only for superadmins and supervisors! </p>
+<p>Visible only for superadmins and supervisors! </p>
 <% end %>
 
 <% if can? :manage, User %>
-	<p>Visible only for superadmins and supervisors! </p>
+<p>Visible only for superadmins and supervisors! </p>
 <% end %>
 <% end %>
+
+<h1>Travel Infomations</h1>
+
+<!-- <table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Travel from</th>
+			<th>Travel to</th>
+			<th>Travel date</th>
+			<th>Bus type</th>
+			<th>Departing time</th>
+			<th>Seat available</th>
+			<th>Price</th>
+			<th>Availability</th>
+			<th>Company name</th>
+			<th>Takeoff location</th>
+			<th>User</th>
+			<th colspan="3"></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @travel_infomations.each do |travel_infomation| %>
+		<tr>
+			<td><%= travel_infomation.title %></td>
+			<td><%= travel_infomation.travel_from %></td>
+			<td><%= travel_infomation.travel_to %></td>
+			<td><%= travel_infomation.travel_date %></td>
+			<td><%= travel_infomation.bus_type %></td>
+			<td><%= travel_infomation.departing_time %></td>
+			<td><%= travel_infomation.seat_available %></td>
+			<td><%= travel_infomation.price %></td>
+			<td><%= travel_infomation.availability %></td>
+			<td><%= travel_infomation.company_name %></td>
+			<td><%= travel_infomation.takeoff_location %></td>
+			<td><%= link_to 'Show', travel_infomation %></td>
+			<td><%= link_to 'Edit', edit_travel_infomation_path(travel_infomation) %></td>
+			<td><%= link_to 'Destroy', travel_infomation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table> -->
+
+<table class="table table-dark">
+	<thead>
+		<tr>
+			<th scope="col">Title</th>
+			<th scope="col">Travel from</th>
+			<th scope="col">Travel to</th>
+			<th scope="col">Travel date</th>
+			<th scope="col">Bus type</th>
+			<th scope="col">Departing time</th>
+			<th scope="col">Seat available</th>
+			<th scope="col">Price</th>
+			<th scope="col">Availability</th>
+			<th scope="col">Company name</th>
+			<th scope="col">Takeoff location</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @travel_infomations.each do |travel_infomation| %>
+		<tr>
+			<td><%= travel_infomation.title %></td>
+			<td><%= travel_infomation.travel_from %></td>
+			<td><%= travel_infomation.travel_to %></td>
+			<td><%= travel_infomation.travel_date %></td>
+			<td><%= travel_infomation.bus_type %></td>
+			<td><%= travel_infomation.departing_time %></td>
+			<td><%= travel_infomation.seat_available %></td>
+			<td><%= travel_infomation.price %></td>
+			<td><%= travel_infomation.availability %></td>
+			<td><%= travel_infomation.company_name %></td>
+			<td><%= travel_infomation.takeoff_location %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

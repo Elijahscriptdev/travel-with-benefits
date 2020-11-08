@@ -43,6 +43,13 @@
             <% end %>
           </div>
         </li>
+        <% if user_signed_in? %>
+        <% if current_user.superadmin_role? || current_user.supervisor_role? %>
+        <li class="nav-item">
+          <%= link_to 'Admin', rails_admin_path, class: 'nav-link' %>
+        </li>
+        <%end%>
+        <%end%>
         <!-- <% if current_user.nil? %>
           <li class="nav-item">
             <%= link_to new_user_session_path, class: 'nav-link' do %>Sign in<%
@@ -66,13 +73,13 @@
   <%= yield %>
 
   <% unless flash.empty? %>
-  <script type="text/javascript">
-    <% flash.each do |f | %>
-        <%type= f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
-        toastr['<%= type %>']('<%= f[1] %>'); 
-        <%end%>
-  </script>
-  <% end %> 
+   <script type="text/javascript">
+      <%  flash.each do |f| %>
+    <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+   	 toastr['<%= type %>']('<%= f[1] %>');
+   <% end %>
+   </script>
+<% end %>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 class TravelInfomationsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_travel_information, only: %i[show edit update destroy]
+  before_action :set_travel_infomation, only: %i[show edit update destroy]
   before_action :superadmin_role!, except: %i[index show]
 
   # GET /travel_infomations
@@ -25,7 +25,7 @@ class TravelInfomationsController < ApplicationController
   # POST /travel_infomations.json
   def create
     @travel_infomation = TravelInfomation.new(travel_infomation_params)
-
+    @travel_infomation.user = current_user
     respond_to do |format|
       if @travel_infomation.save
         format.html { redirect_to @travel_infomation, notice: 'Travel infomation was successfully created.' }
